@@ -1,0 +1,9 @@
+{
+	"servers": {
+		"my-mcp-server-c12bed59": {
+			"url": "https://stitch.googleapis.com/mcp",
+			"type": "http"
+		}
+	},
+	"inputs": []
+}

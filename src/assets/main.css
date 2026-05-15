@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .texture-asphalt {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+  }
+
+  .noise-bg {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.05;
+    pointer-events: none;
+  }
+
+  .chamfered {
+    clip-path: polygon(10px 0, 10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-container text-surface transition-all duration-200;
+  }
+  .btn-primary:hover {
+    @apply bg-secondary-container;
+  }
+  .btn-primary:active {
+    transform: scale(0.98);
+    box-shadow: inset 0 0 10px rgba(255, 95, 0, 0.5);
+  }
+
+  .btn-secondary {
+    @apply border-2 border-outline-variant text-on-surface bg-transparent transition-all duration-200;
+  }
+  .btn-secondary:hover {
+    @apply border-primary-container text-primary-container;
+  }
+}
